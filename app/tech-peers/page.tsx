@@ -147,7 +147,7 @@ export default function TechPeersPage() {
               <CardContent>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   I volunteer with MAS, focusing on CiviCRM implementation, AI adoption
-                  strategy, and n8n workflow automation for nonprofits across Canada and internationally.
+                  strategy, and n8n workflow automation for nonprofits in the Greater Toronto Area.
                 </p>
               </CardContent>
             </Card>

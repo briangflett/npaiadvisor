@@ -104,16 +104,16 @@ export default function ProjectsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                  In development
+                  Planning phase
                 </p>
               </CardContent>
             </Card>
 
             <Card className="border-dashed">
               <CardHeader>
-                <CardTitle className="text-lg">Nonprofit Tech Assessment Tool</CardTitle>
+                <CardTitle className="text-lg">Nonprofit AI Assessment Tool</CardTitle>
                 <CardDescription>
-                  Automated technology readiness assessment for small nonprofits
+                  AI and workflow automation readiness assessment for small nonprofits
                 </CardDescription>
               </CardHeader>
               <CardContent>

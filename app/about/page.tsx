@@ -34,8 +34,8 @@ export default function AboutPage() {
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
                 I volunteer with Management Advisory Services (MAS), a nonprofit
-                consulting organization serving nonprofits across Canada and internationally. My focus
-                areas include CiviCRM implementation, AI adoption strategy, and n8n workflow automation.
+                consulting organization serving nonprofits in the Greater Toronto Area, and am open to international clients.
+                My focus areas include CiviCRM implementation, AI adoption strategy, and n8n workflow automation.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
                 Based in Oakville, Ontario, Canada, I'm passionate about using technology to amplify
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-3">
                   Technology advisor providing CiviCRM implementation, AI strategy, and automation
-                  consulting to nonprofits worldwide.
+                  consulting to nonprofits in the GTA.
                 </p>
                 <a
                   href="https://masadvise.org"
