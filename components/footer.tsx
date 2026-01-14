@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, MessageSquare } from "lucide-react"
 
 export function Footer() {
   return (
@@ -9,6 +9,15 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Connect</h3>
             <ul className="mt-4 space-y-3">
+              <li>
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  Contact Form
+                </Link>
+              </li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/brianflett/"
@@ -29,15 +38,6 @@ export function Footer() {
                 >
                   <Github className="h-4 w-4" />
                   GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:brian@masadvise.org"
-                  className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
-                >
-                  <Mail className="h-4 w-4" />
-                  brian@masadvise.org
                 </a>
               </li>
             </ul>

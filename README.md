@@ -94,17 +94,11 @@ Detailed breakdown:
 
 ## What's NOT Included
 
-- ❌ Contact forms
 - ❌ Service pricing
 - ❌ Newsletter signup
 - ❌ Blog infrastructure (may add later)
 - ❌ Testimonials
 - ❌ "Hire me" CTAs
-
-## Related Repositories
-
-- **Strategic Planning:** https://github.com/briangflett/npaiadvisor-strategy
-- **Allard Prize Workflows:** https://github.com/briangflett/n8n-ap-workflows
 
 ## Deployment
 

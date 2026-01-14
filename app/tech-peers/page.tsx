@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Users, Code2, Lightbulb, Calendar, Github, Linkedin, Mail, ArrowRight } from "lucide-react"
+import { Users, Code2, Lightbulb, Calendar, Github, Linkedin, ArrowRight } from "lucide-react"
 
 export default function TechPeersPage() {
   return (
@@ -184,12 +184,18 @@ export default function TechPeersPage() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-4 mb-6">
+                <Link href="/contact?type=tech-peer">
+                  <Button>
+                    Get in Touch
+                  </Button>
+                </Link>
+
                 <a
                   href="https://www.linkedin.com/in/brianflett/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button>
+                  <Button variant="outline">
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
                   </Button>
@@ -203,13 +209,6 @@ export default function TechPeersPage() {
                   <Button variant="outline">
                     <Github className="h-4 w-4" />
                     GitHub
-                  </Button>
-                </a>
-
-                <a href="mailto:brian@masadvise.org">
-                  <Button variant="outline">
-                    <Mail className="h-4 w-4" />
-                    Email
                   </Button>
                 </a>
               </div>

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Briefcase, Code2, Heart, Music, Trophy } from "lucide-react"
+import Link from "next/link"
+import { Github, Linkedin, Briefcase, Code2, Heart, Music, Trophy } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -202,12 +203,18 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-4">
+                <Link href="/contact">
+                  <Button>
+                    Get in Touch
+                  </Button>
+                </Link>
+
                 <a
                   href="https://www.linkedin.com/in/brianflett/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button>
+                  <Button variant="outline">
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
                   </Button>
@@ -223,28 +230,6 @@ export default function AboutPage() {
                     GitHub
                   </Button>
                 </a>
-
-                <a href="mailto:brian@masadvise.org">
-                  <Button variant="outline">
-                    <Mail className="h-4 w-4" />
-                    Email
-                  </Button>
-                </a>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-zinc-200 dark:border-zinc-800">
-                <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  <strong>Strategic Planning:</strong>{" "}
-                  <a
-                    href="https://github.com/briangflett/npaiadvisor"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-900 hover:underline dark:text-zinc-50"
-                  >
-                    View the strategic planning repository
-                  </a>
-                  {" "}for documentation on collaboration frameworks and nonprofit AI adoption.
-                </p>
               </div>
             </CardContent>
           </Card>

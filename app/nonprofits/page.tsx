@@ -238,12 +238,17 @@ export default function NonprofitsPage() {
             Ready to Explore AI Automation?
           </h3>
           <p className="text-zinc-600 dark:text-zinc-400 mb-6 max-w-2xl mx-auto">
-            See more examples of nonprofit automation projects or learn about my background
-            working with organizations like yours.
+            Get in touch to discuss how AI automation could help your organization,
+            or explore more examples of nonprofit automation projects.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/projects">
+            <Link href="/contact?type=nonprofit">
               <Button size="lg">
+                Get in Touch
+              </Button>
+            </Link>
+            <Link href="/projects">
+              <Button variant="outline" size="lg">
                 View All Projects
                 <ArrowRight className="h-4 w-4" />
               </Button>
