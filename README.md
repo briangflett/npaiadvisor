@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NPAIAdvisor.com - Portfolio Website
 
-## Getting Started
+Portfolio website showcasing nonprofit AI automation projects and tech peer collaboration network.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This is the public-facing website for NPAIAdvisor - Brian Flett's portfolio of nonprofit AI automation work. The site features project case studies, information about tech peer collaboration opportunities, and background on nonprofit technology consulting work.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Components:** shadcn/ui
+- **Icons:** Lucide React
+- **Deployment:** Vercel (coming soon)
+
+## Project Structure
+
+```
+app/
+├── page.tsx              # Home page (Hero, Featured Project, Tech Peers, Current Work)
+├── about/
+│   └── page.tsx          # About page (Background, Technical Focus, Connect)
+├── projects/
+│   ├── page.tsx          # Projects landing page
+│   └── allard-prize/
+│       └── page.tsx      # Allard Prize case study
+├── layout.tsx            # Root layout with navigation and footer
+└── globals.css           # Global styles
+
+components/
+├── navigation.tsx        # Site navigation header
+├── footer.tsx           # Site footer
+└── ui/                  # shadcn/ui components
+    ├── card.tsx
+    └── button.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install dependencies
+pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run development server
+pnpm run dev
 
-## Learn More
+# Build for production
+pnpm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Start production server
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Key Pages
 
-## Deploy on Vercel
+### Home (/)
+Four sections:
+1. **Hero** - Main tagline and CTAs
+2. **Featured Project** - Allard Prize preview
+3. **For Tech Peers** - Collaboration opportunity
+4. **Current Work** - MAS consulting link
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Projects (/projects)
+- Landing page for project case studies
+- Featured: Allard Prize donor outreach automation
+- Placeholder for 1-2 future projects
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Allard Prize Case Study (/projects/allard-prize)
+Detailed breakdown:
+- Problem/Challenge
+- Solution (4-part workflow system)
+- Technology Stack
+- Results & Impact
+- Links to GitHub and Allard Prize
+
+### About (/about)
+- Background (career, MAS work)
+- Technical Focus (tools, specializations)
+- Current Work (MAS, Allard Prize)
+- Looking for Collaborators
+- Outside Interests
+- Connect (LinkedIn, GitHub, Email)
+
+## Design Principles
+
+- **Minimal & Focused:** Simple, clean design without unnecessary features
+- **Technical Peer-to-Peer:** Professional but approachable tone
+- **Portfolio-First:** Showcases projects, not selling services
+- **Collaboration-Oriented:** Emphasizes peer learning network
+
+## What's NOT Included
+
+- ❌ Contact forms
+- ❌ Service pricing
+- ❌ Newsletter signup
+- ❌ Blog infrastructure (may add later)
+- ❌ Testimonials
+- ❌ "Hire me" CTAs
+
+## Related Repositories
+
+- **Strategic Planning:** https://github.com/briangflett/npaiadvisor-strategy
+- **Allard Prize Workflows:** https://github.com/briangflett/n8n-ap-workflows
+
+## Deployment
+
+Will be deployed to Vercel at **npaiadvisor.com** (coming soon).
+
+## License
+
+© 2026 Brian Flett. All rights reserved.
