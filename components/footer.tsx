@@ -47,24 +47,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Projects</h3>
             <ul className="mt-4 space-y-3">
               <li>
-                <a
-                  href="https://github.com/briangflett/npaiadvisor"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
-                >
-                  Strategic Planning Repo
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/briangflett/n8n-ap-workflows"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
-                >
-                  Allard Prize Workflows
-                </a>
+                  Coming Soon
               </li>
             </ul>
           </div>
