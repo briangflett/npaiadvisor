@@ -6,6 +6,11 @@ Portfolio website showcasing nonprofit AI automation projects and tech peer coll
 
 This is the public-facing website for NPAIAdvisor - Brian Flett's portfolio of nonprofit AI automation work. The site features project case studies, information about tech peer collaboration opportunities, and background on nonprofit technology consulting work.
 
+**Related Projects**:
+- **Strategy & Frameworks**: `/home/brian/workspace/workflows/npaiadvisor-strategy/`
+- **n8n Workflows**: `/home/brian/workspace/workflows/personal/npaiadvisor/`
+- **Reference**: [Allard Prize workflows](https://github.com/briangflett/n8n-ap-workflows)
+
 ## Tech Stack
 
 - **Framework:** Next.js 16 with App Router
@@ -13,29 +18,8 @@ This is the public-facing website for NPAIAdvisor - Brian Flett's portfolio of n
 - **Styling:** Tailwind CSS v4
 - **Components:** shadcn/ui
 - **Icons:** Lucide React
-- **Deployment:** Vercel (coming soon)
-
-## Project Structure
-
-```
-app/
-├── page.tsx              # Home page (Hero, Featured Project, Tech Peers, Current Work)
-├── about/
-│   └── page.tsx          # About page (Background, Technical Focus, Connect)
-├── projects/
-│   ├── page.tsx          # Projects landing page
-│   └── allard-prize/
-│       └── page.tsx      # Allard Prize case study
-├── layout.tsx            # Root layout with navigation and footer
-└── globals.css           # Global styles
-
-components/
-├── navigation.tsx        # Site navigation header
-├── footer.tsx           # Site footer
-└── ui/                  # shadcn/ui components
-    ├── card.tsx
-    └── button.tsx
-```
+- **Package Manager:** pnpm (not npm)
+- **Deployment:** Vercel at [npaiadvisor.com](https://npaiadvisor.com)
 
 ## Development
 
@@ -43,7 +27,7 @@ components/
 # Install dependencies
 pnpm install
 
-# Run development server
+# Run development server (http://localhost:3000)
 pnpm run dev
 
 # Build for production
@@ -51,39 +35,24 @@ pnpm run build
 
 # Start production server
 pnpm start
+
+# Add shadcn/ui components
+pnpm dlx shadcn@latest add [component-name]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+## Project Structure
 
-## Key Pages
+**Current pages**: See `app/*/page.tsx` for up-to-date page structure
 
-### Home (/)
-Four sections:
-1. **Hero** - Main tagline and CTAs
-2. **Featured Project** - Allard Prize preview
-3. **For Tech Peers** - Collaboration opportunity
-4. **Current Work** - MAS consulting link
+**Main sections**:
+- Home (Are you a Nonprofit or AI Engineer?)
+- Nonprofits (Landing page for nonprofit organizations)
+- AI Engineers (Landing page for tech peers)
+- Projects (Case studies, starting with Allard Prize)
+- About (Background, Technical Focus, Connect)
+- Contact (Contact form)
 
-### Projects (/projects)
-- Landing page for project case studies
-- Featured: Allard Prize donor outreach automation
-- Placeholder for 1-2 future projects
-
-### Allard Prize Case Study (/projects/allard-prize)
-Detailed breakdown:
-- Problem/Challenge
-- Solution (4-part workflow system)
-- Technology Stack
-- Results & Impact
-- Links to GitHub and Allard Prize
-
-### About (/about)
-- Background (career, MAS work)
-- Technical Focus (tools, specializations)
-- Current Work (MAS, Allard Prize)
-- Looking for Collaborators
-- Outside Interests
-- Connect (LinkedIn, GitHub, Email)
+**Check the actual files** for current content and structure - they change regularly.
 
 ## Design Principles
 
@@ -94,15 +63,16 @@ Detailed breakdown:
 
 ## What's NOT Included
 
-- ❌ Service pricing
+- ❌ Service pricing or "hire me" CTAs
 - ❌ Newsletter signup
 - ❌ Blog infrastructure (may add later)
 - ❌ Testimonials
-- ❌ "Hire me" CTAs
 
-## Deployment
+## Related Documentation
 
-Will be deployed to Vercel at **npaiadvisor.com** (coming soon).
+- **CLAUDE.md** - Working guide for Claude Code
+- **Strategy docs** - `/home/brian/workspace/workflows/npaiadvisor-strategy/docs/`
+- **Workflows** - `/home/brian/workspace/workflows/personal/npaiadvisor/`
 
 ## License
 

@@ -18,7 +18,7 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/nonprofits", label: "For Nonprofits" },
-    { href: "/tech-peers", label: "For Tech Peers" },
+    { href: "/ai-engineers", label: "For AI Engineers" },
     { href: "/projects", label: "Projects" },
     { href: "/about", label: "About" },
   ]

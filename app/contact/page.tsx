@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Send, CheckCircle2, AlertCircle } from "lucide-react"
 
-type ContactType = "nonprofit" | "tech-peer" | "other"
+type ContactType = "nonprofit" | "ai-engineer" | "other"
 
 function ContactForm() {
   const searchParams = useSearchParams()
@@ -170,13 +170,13 @@ function ContactForm() {
                 <input
                   type="radio"
                   name="type"
-                  value="tech-peer"
-                  checked={formData.type === "tech-peer"}
+                  value="ai-engineer"
+                  checked={formData.type === "ai-engineer"}
                   onChange={(e) => setFormData({ ...formData, type: e.target.value as ContactType })}
                   className="h-4 w-4 border-zinc-300 text-zinc-900 focus:ring-zinc-900 dark:border-zinc-700 dark:text-zinc-50 dark:focus:ring-zinc-50"
                 />
                 <span className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Tech peer interested in collaboration
+                  AI Engineer interested in collaboration
                 </span>
               </label>
               <label className="flex items-center gap-3 cursor-pointer">
@@ -270,7 +270,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Interested in nonprofit AI automation or tech peer collaboration? I'd love to hear from you.
+            Interested in nonprofit AI automation or AI Engineer collaboration? I'd love to hear from you.
           </p>
         </div>
 

@@ -45,12 +45,12 @@ export default function Home() {
             </Card>
           </Link>
 
-          <Link href="/tech-peers">
+          <Link href="/ai-engineers">
             <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="h-8 w-8 text-zinc-600 dark:text-zinc-400" />
-                  <CardTitle className="text-2xl">For Tech Peers</CardTitle>
+                  <CardTitle className="text-2xl">For AI Engineers</CardTitle>
                 </div>
                 <CardDescription className="text-base">
                   Join a small network of tech professionals building AI automation for nonprofits
@@ -58,7 +58,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400 mb-6">
-                  <li>• Collaborate with like-minded tech peers</li>
+                  <li>• Collaborate with like-minded AI Engineers</li>
                   <li>• Share n8n and AI automation projects</li>
                   <li>• Learn while building real solutions</li>
                   <li>• Informal monthly knowledge sharing</li>

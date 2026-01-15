@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Users, Code2, Lightbulb, Calendar, Github, Linkedin, ArrowRight } from "lucide-react"
 
-export default function TechPeersPage() {
+export default function AIEngineersPage() {
   return (
     <div className="py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -11,7 +11,7 @@ export default function TechPeersPage() {
         <div className="mb-16 text-center">
           <Users className="mx-auto h-12 w-12 text-zinc-600 dark:text-zinc-400 mb-4" />
           <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl mb-6">
-            Looking for Tech Peer Collaborators
+            Looking for AI Engineer Collaborators
           </h1>
           <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             Seeking a few tech professionals who enjoy building with n8n, working with AI/LLMs,
@@ -28,7 +28,7 @@ export default function TechPeersPage() {
             <CardContent className="space-y-4">
               <p className="text-zinc-600 dark:text-zinc-400">
                 I'm building AI automation solutions for nonprofits and want to connect with
-                like-minded tech peers for informal knowledge sharing and collaboration.
+                like-minded tech professionals for informal knowledge sharing and collaboration.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
                 Not a formal community, not a business network, not a side project commitment.
@@ -179,12 +179,12 @@ export default function TechPeersPage() {
             <CardHeader>
               <CardTitle className="text-2xl">Let's Connect</CardTitle>
               <CardDescription className="text-base">
-                Reach out if you're interested in informal tech peer collaboration
+                Reach out if you're interested in informal AI Engineer collaboration
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-4 mb-6">
-                <Link href="/contact?type=tech-peer">
+                <Link href="/contact?type=ai-engineer">
                   <Button>
                     Get in Touch
                   </Button>
