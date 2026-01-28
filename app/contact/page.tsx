@@ -1,12 +1,24 @@
 "use client"
 
-import { Suspense, useState } from "react"
+import { Suspense, useState, useEffect, useCallback } from "react"
 import { useSearchParams } from "next/navigation"
+import Script from "next/script"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Send, CheckCircle2, AlertCircle } from "lucide-react"
 
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void
+      execute: (siteKey: string, options: { action: string }) => Promise<string>
+    }
+  }
+}
+
 type ContactType = "nonprofit" | "ai-engineer" | "other"
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""
 
 function ContactForm() {
   const searchParams = useSearchParams()
@@ -21,6 +33,21 @@ function ContactForm() {
   })
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false)
+
+  const handleRecaptchaLoad = useCallback(() => {
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(() => {
+        setRecaptchaLoaded(true)
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (window.grecaptcha) {
+      handleRecaptchaLoad()
+    }
+  }, [handleRecaptchaLoad])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,17 +55,28 @@ function ContactForm() {
     setErrorMessage("")
 
     try {
-      const response = await fetch(
-        "https://n8n.masadvise.org/webhook/06ea1519-0c93-4737-b898-4a280108bc37",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${process.env.NEXT_PUBLIC_N8N_WEBHOOK_TOKEN}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      )
+      // Get reCAPTCHA token
+      if (!window.grecaptcha || !recaptchaLoaded) {
+        throw new Error("reCAPTCHA not loaded. Please refresh the page and try again.")
+      }
+
+      const recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, {
+        action: "contact_form",
+      })
+
+      // Submit to our API route (which verifies reCAPTCHA and forwards to n8n)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
+      })
+
+      const result = await response.json()
 
       if (response.ok) {
         setStatus("success")
@@ -50,14 +88,17 @@ function ContactForm() {
           message: "",
         })
       } else {
-        const errorText = await response.text()
-        console.error("Form submission failed:", response.status, errorText)
-        throw new Error(`Failed to submit form: ${response.status}`)
+        console.error("Form submission failed:", response.status, result.error)
+        throw new Error(result.error || "Failed to submit form")
       }
     } catch (error) {
       console.error("Form submission error:", error)
       setStatus("error")
-      setErrorMessage("There was a problem submitting your message. Please try again or reach out via LinkedIn.")
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "There was a problem submitting your message. Please try again or reach out via LinkedIn."
+      )
     }
   }
 
@@ -83,15 +124,20 @@ function ContactForm() {
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Contact Form</CardTitle>
-        <CardDescription>
-          Fill out the form below and I'll get back to you.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <>
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+        onLoad={handleRecaptchaLoad}
+      />
+      <Card>
+        <CardHeader>
+          <CardTitle>Contact Form</CardTitle>
+          <CardDescription>
+            Fill out the form below and I'll get back to you.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label
@@ -220,7 +266,7 @@ function ContactForm() {
             </div>
           )}
 
-          <Button type="submit" disabled={status === "submitting"} className="w-full">
+          <Button type="submit" disabled={status === "submitting" || !recaptchaLoaded} className="w-full">
             {status === "submitting" ? (
               "Sending..."
             ) : (
@@ -230,9 +276,32 @@ function ContactForm() {
               </>
             )}
           </Button>
+
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 text-center">
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-zinc-700 dark:hover:text-zinc-300"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://policies.google.com/terms"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-zinc-700 dark:hover:text-zinc-300"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </p>
         </form>
       </CardContent>
     </Card>
+    </>
   )
 }
 
