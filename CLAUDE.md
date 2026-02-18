@@ -82,4 +82,14 @@ pnpm run build          # Production build
 
 ---
 
-**Last Updated**: 2026-01-22
+## Session Context
+
+This is a **public repo** — no internal infrastructure details, workflow IDs, or credentials here.
+
+Private project instructions (in Claude AI project settings) provide session workflow, persistence tooling, and cross-session continuity. On startup, the Claude AI project reads detailed context from Google Drive automatically.
+
+When using Claude Code on this repo, use the globally available `klaus-workflows` skill for session logging, memory persistence, and task tracking.
+
+---
+
+**Last Updated**: 2026-02-18
