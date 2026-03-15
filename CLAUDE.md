@@ -82,14 +82,13 @@ pnpm run build          # Production build
 
 ---
 
-## Session Context
+## Session Lifecycle
 
-This is a **public repo** — no internal infrastructure details, workflow IDs, or credentials here.
+- **Start**: `/bootstrap` (loads Klaus context, checks pending handoffs)
+- **End**: `/wrapup` (logs summary, updates SESSIONS, handles handoffs, checks git)
 
-Private project instructions (in Claude AI project settings) provide session workflow, persistence tooling, and cross-session continuity. On startup, the Claude AI project reads detailed context from Google Drive automatically.
-
-When using Claude Code on this repo, use the globally available `klaus-workflows` skill for session logging, memory persistence, and task tracking.
+This is a **public repo** — no internal infrastructure details, workflow IDs, or credentials here. Klaus capabilities are provided via the globally available `klaus-workflows`, `bootstrap`, and `wrapup` skills.
 
 ---
 
-**Last Updated**: 2026-02-18
+**Last Updated**: 2026-03-15
