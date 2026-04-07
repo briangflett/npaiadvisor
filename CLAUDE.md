@@ -85,10 +85,10 @@ pnpm run build          # Production build
 ## Session Lifecycle
 
 - **Start**: `/bootstrap` (loads Klaus context, checks pending handoffs)
-- **End**: `/wrapup` (logs summary, updates SESSIONS, handles handoffs, checks git)
+- **End**: `/wrapup` (logs summary to Postgres, handles handoffs, checks git)
 
 This is a **public repo** — no internal infrastructure details, workflow IDs, or credentials here. Klaus capabilities are provided via the globally available `klaus-workflows`, `bootstrap`, and `wrapup` skills.
 
 ---
 
-**Last Updated**: 2026-03-15
+**Last Updated**: 2026-04-07
