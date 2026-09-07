@@ -1,14 +1,6 @@
 # NPAIAdvisor - Claude Guide
 
-## ⚠️ CRITICAL: Security
-
-**NEVER commit secrets to git:**
-- NO real passwords, API keys, tokens, or credentials in ANY files
-- Use placeholders: `username:password`, `your-token-here`, `your-api-key`
-- Check before every commit: `git diff --cached`
-- Real secrets ONLY in `.env.local` or `.env` files (git-ignored)
-
-**Reference:** @/home/brian/SECURITY.md
+@/home/brian/workspace/development/klaus/.claude/home/protocols/security-preamble.md
 
 ---
 
@@ -25,7 +17,7 @@
 **Three Related Directories**:
 1. `/home/brian/workspace/development/npaiadvisor` - Website (Next.js)
 2. `/home/brian/workspace/workflows/npaiadvisor-strategy` - Strategic docs
-3. `/home/brian/workspace/workflows/personal/npaiadvisor` - n8n workflows
+3. `/home/brian/workspace/workflows/personal/npaiadvisor` - n8n workflows (ARCHIVED 2026-07; historical JSON only)
 
 **GitHub Access** (web interface):
 ```
@@ -91,4 +83,4 @@ This is a **public repo** — no internal infrastructure details, workflow IDs, 
 
 ---
 
-**Last Updated**: 2026-04-07
+**Last Updated**: 2026-09-07
